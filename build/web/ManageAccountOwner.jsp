@@ -1,8 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -43,19 +43,22 @@
                 padding: 0.3em 0.6em;
             }
         </style>
+    </head>
     <body>
         <jsp:include page="Menu.jsp"></jsp:include>
-        <c:set var="searchValue" value="${param.txtSearchValue}"/>
-        <div class="container-fluid">
-            <div class="row">
-                <!--Left side of the page - The Dashboard-->
-                <div class="col-sm-2">
-                    <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-list"></i> Dashboard </div>
-                    <ul class="list-group category_block">
-                        <li class="list-group-item text-white" ><a href="home">Home</a></li>
-                        <li class="list-group-item text-white" ><a href="ManageUser">Manage User</a></li>
-                    </ul>
-                </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <!--Left side of the page - The Dashboard-->
+                    <nav class="col-sm-2">
+                        <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-list"></i> Dashboard </div>
+                        <ul class="list-group category_block">
+                            <li class="list-group-item text-white" ><a href="home">Admin Statistic</a></li>
+                            <li class="list-group-item text-white" ><a href="getSaleStatisticOwner">Sale Statistic</a></li>
+                            <li class="list-group-item text-white" ><a href="getMarketingStatisticOwner">Marketing Statistic</a></li>
+                            <li class="list-group-item text-white" ><a href="manageUserOwner">Manage User</a></li>
+                        </ul>
+                    </nav>
+                    <!--End of the left side-->
                 <div class="table-wrapper col-sm-10">
                     <div class="table-title">
                         <div class="row">
@@ -84,7 +87,7 @@
                                 </form>
                             </div>
                             <div class="col-sm-4">
-                                <a href="AddNewAccountPage.jsp"  class="btn btn-success"><i class="material-icons">&#xE147;</i> <span>Add New Account</span></a>
+                                <a href="AddNewAccountOwnerPage.jsp"  class="btn btn-success"><i class="material-icons">&#xE147;</i> <span>Add New Account</span></a>
                             </div>
                         </div>
                     </div>
@@ -106,9 +109,7 @@
                                     <td>${userDto.email}</td>    
                                     <td>
                                         <c:if test="${userDto.status}"><span class="update-link-true" onclick="changeStatus('${userDto.email}', '${userDto.status}')">Activated</span></c:if>
-                                        <c:if test="${!userDto.status}">
-                                            <span class="update-link-false" onclick="changeStatus('${userDto.email}', '${userDto.status}')">Deactivated</span>
-                                        </c:if>
+                                        <c:if test="${!userDto.status}"><span class="update-link-false" onclick="changeStatus('${userDto.email}', '${userDto.status}')">Deactivated</span></c:if>
                                         </td>
                                         <td>
                                         ${userDto.role.name}
@@ -142,7 +143,7 @@
         <script>
             function changeStatus(email, status) {
                 $.ajax({
-                    url: "/bakeryShopping/UpdateAccountStatus",
+                    url: "/bakeryShopping/UpdateAccountStatusOwner",
                     type: "get", //send it through get method
                     data: {
                         Email: email,

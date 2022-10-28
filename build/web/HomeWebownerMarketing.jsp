@@ -25,6 +25,7 @@
                             <li class="list-group-item text-white" ><a href="home">Admin Statistic</a></li>
                             <li class="list-group-item text-white" ><a href="getSaleStatisticOwner">Sale Statistic</a></li>
                             <li class="list-group-item text-white" ><a href="getMarketingStatisticOwner">Marketing Statistic</a></li>
+                            <li class="list-group-item text-white" ><a href="manageUserOwner">Manage User</a></li>
                         </ul>
                     </nav>
                     <!--End of the left side-->

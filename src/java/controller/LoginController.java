@@ -61,10 +61,12 @@ public class LoginController extends HttpServlet {
             //check the result of the login and proccess acorddingly
             if (result != null) {
                 //create cookie for the current user
-                Cookie cookie = new Cookie(email, password);
-                cookie.setMaxAge(60);
-                response.addCookie(cookie);
-                System.out.println("Co vo");
+                Cookie cookieMail = new Cookie("email", email);
+                    Cookie cookiePass = new Cookie("pass", password);
+                    cookieMail.setMaxAge(60*60);
+                    cookiePass.setMaxAge(60*60);
+                    response.addCookie(cookieMail);
+                    response.addCookie(cookiePass);
 
                 if (result != null) {
                     //create seesion to save information of the current user

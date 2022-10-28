@@ -19,7 +19,7 @@ import javax.sql.DataSource;
  * @author Dang Minh Quan
  */
 public class DbConnect implements Serializable{
-    private String dbName = "BakeryShop";
+    private String dbName = "SWP391-BakeryShop";
     private String username = "sa";
     private String password = "123456";
     
