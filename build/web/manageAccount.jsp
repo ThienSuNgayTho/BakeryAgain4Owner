@@ -105,12 +105,12 @@
                                     <td>${counter.count}.</td>
                                     <td>${userDto.email}</td>    
                                     <td>
-                                        <c:if test="${userDto.status}"><span class="update-link-true" onclick="changeStatus('${userDto.email}', '${userDto.status}')">Activated</span></c:if>
-                                        <c:if test="${!userDto.status}">
-                                            <span class="update-link-false" onclick="changeStatus('${userDto.email}', '${userDto.status}')">Deactivated</span>
+                                        <c:if test="${sessionScope.CURRENT_USER.email != userDto.email}">
+                                            <c:if test="${userDto.status}"><span class="update-link-true" onclick="changeStatus('${userDto.email}', '${userDto.status}')">Activated</span></c:if>
+                                            <c:if test="${!userDto.status}"><span class="update-link-false" onclick="changeStatus('${userDto.email}', '${userDto.status}')">Deactivated</span></c:if>
                                         </c:if>
-                                        </td>
-                                        <td>
+                                    </td>
+                                    <td>
                                         ${userDto.role.name}
                                     </td>
                                     <td>

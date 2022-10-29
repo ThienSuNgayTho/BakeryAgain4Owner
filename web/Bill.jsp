@@ -277,8 +277,8 @@
                                     <h4 >City</h4>
                                     <span>
                                         <select style="width:300px" id="provinceSelect"  class="form-select">
-                                            <option value="202"  selected>Hồ Chí Minh</option>
-                                            <input type="hidden"  name="City" value="Ho Chi Minh" id="City">
+                                            <option value="203"  selected>Đà Nẵng</option>
+                                            <input type="hidden"  name="City" value="Da Nang" id="City">
                                         </select>
                                     </span>
 
@@ -337,7 +337,7 @@
         let districtSelect = document.getElementById("districtSelect");
 //        districtSelect.textContent = '<option selected>District</option>';
 //        let provinceSelect = document.getElementById("provinceSelect");
-        provinceId = 202;
+        provinceId = 203;
         console.log(provinceId);
         fetch("https://online-gateway.ghn.vn/shiip/public-api/master-data/district?province_id=" + provinceId, {
             method: 'GET',
@@ -398,7 +398,7 @@
         wardInput.value = wardSelect.options[wardSelect.selectedIndex].textContent;
         let shippingFeeContainer = document.getElementById("shippingFee");
         let shippingFee = document.getElementById("shippingFee");
-        fetch("https://online-gateway.ghn.vn/shiip/public-api/v2/shipping-order/fee?service_type_id=2&insurance_value=0&coupon=&from_district_id=1542&to_district_id=" + districtId + "&to_ward_code=" + wardId + "&height=" + extra * 10 + "&length=" + extra * 10 + "&weight=" + extra * 100 + "&width=" + extra * 10, {
+        fetch("https://online-gateway.ghn.vn/shiip/public-api/v2/shipping-order/fee?service_type_id=2&insurance_value=0&coupon=&from_district_id=1529&to_district_id=" + districtId + "&to_ward_code=" + wardId + "&height=" + extra * 10 + "&length=" + extra * 10 + "&weight=" + extra * 100 + "&width=" + extra * 10, {
             method: 'GET',
             headers: {
                 'token': 'beeffb36-e516-11eb-9cee-6e1c80ec1bcb'
