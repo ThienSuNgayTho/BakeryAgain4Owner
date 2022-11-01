@@ -440,7 +440,7 @@ public class PostDAO implements Serializable {
             con = new DbConnect().makeConnection();
             if (con != null) {
                 //2.Create sQL String
-                String sql = "Select Id, Email, Title, ThumbnailLink, UploadDate, "
+                String sql = "Select PostId, Email, Title, ThumbnailLink, UploadDate, "
                         + "Status, Details, CategoryId, OnSlider, UpdateDate "
                         + "From [Post] "
                         + "Where Title like ? "

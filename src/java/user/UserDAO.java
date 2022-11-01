@@ -543,7 +543,7 @@ public class UserDAO implements Serializable {
             con = new DbConnect().makeConnection();
             if(con != null){
                 //2.Create sQL String
-                String sql = "SELECT Email, Password, AvatarLink, Address, FullName, PhoneNumber, Gender, CreationDate,  Status, [User].RoleId, [Role].Name "
+                String sql = "SELECT Email, Password, AvatarLink, Address, FullName, PhoneNumber, Gender, CreationDate,  Status, [User].RoleId, [Role].RoleName "
                         + "FROM [User] FULL JOIN [Role] ON [User].RoleId = [Role].RoleId "
                             + "Where Email Like ? "
                             + "order by Email \n"
